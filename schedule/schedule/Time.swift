@@ -23,7 +23,9 @@ struct Time {
     func show() -> String {
         var hour : String = ""
         var minute : String = ""
-        if (self.hour < 10) {
+        if (self.hour == 24) {
+            hour = "00"
+        } else if (self.hour < 10) {
             hour = "0\(self.hour)"
         } else {
             hour = "\(self.hour)"

@@ -17,13 +17,19 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgq-Mh-I7h">
-                        <rect key="frame" x="401.66666666666669" y="1" width="43.333333333333314" height="21"/>
+                        <rect key="frame" x="401.66666666666669" y="0.0" width="43.333333333333314" height="21"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sV-3f-arx">
-                        <rect key="frame" x="401.66666666666669" y="265" width="43.333333333333314" height="21"/>
+                        <rect key="frame" x="401.66666666666669" y="266" width="43.333333333333314" height="21"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN0-hx-uEa">
+                        <rect key="frame" x="24.000000000000004" y="0.0" width="43.333333333333343" height="21"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -32,13 +38,16 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="8sV-3f-arx" secondAttribute="bottom" constant="1" id="NWl-1d-vjs"/>
+                <constraint firstItem="TN0-hx-uEa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="CJy-Ps-xm8"/>
+                <constraint firstAttribute="bottom" secondItem="8sV-3f-arx" secondAttribute="bottom" id="NWl-1d-vjs"/>
                 <constraint firstAttribute="trailing" secondItem="zgq-Mh-I7h" secondAttribute="trailing" constant="24" id="NZf-yO-Y5s"/>
-                <constraint firstItem="zgq-Mh-I7h" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="Tsk-Yq-Hxm"/>
+                <constraint firstItem="TN0-hx-uEa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TKF-vp-cPh"/>
+                <constraint firstItem="zgq-Mh-I7h" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Tsk-Yq-Hxm"/>
                 <constraint firstAttribute="trailing" secondItem="8sV-3f-arx" secondAttribute="trailing" constant="24" id="uzC-kq-OcG"/>
             </constraints>
             <size key="customSize" width="469" height="287"/>
             <connections>
+                <outlet property="nameOfTaskLabel" destination="TN0-hx-uEa" id="5qB-U4-JSb"/>
                 <outlet property="timeFinishLabel" destination="8sV-3f-arx" id="Og9-2u-Qc7"/>
                 <outlet property="timeStartLabel" destination="zgq-Mh-I7h" id="uti-mf-pNe"/>
             </connections>

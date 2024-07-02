@@ -17,15 +17,18 @@ class ViewController: UIViewController {
         setupUI()
     }
 
-    private func setupUI() {
+    private func setupTestData() {
         addTask(name: "Hoc Tieng Nhat", hour1: 8, minute1: 0, hour2: 10, minute2: 0)
         addTask(name: "Nau An", hour1: 11, minute1: 0, hour2: 11, minute2: 30)
         addTask(name: "Lam viec", hour1: 13, minute1: 0, hour2: 16, minute2: 0)
         addTask(name: "Chay Bo", hour1: 17, minute1: 0, hour2: 18, minute2: 0)
         addTask(name: "Lam them", hour1: 20 , minute1: 0, hour2: 24, minute2: 0)
+    }
+    
+    private func setupUI() {
+        self.setupTestData()
         
         convertToTableData()
-        debugPrint(tasksForTable)
         
 //MARK: setup collection view
         listView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
@@ -48,30 +51,54 @@ class ViewController: UIViewController {
         let time1 = Time(hour: hour1, minute: minute1)
         let time2 = Time(hour: hour2, minute: minute2)
         let task = Task(name: name, timeStart: time1, timeFinisth: time2)
-        debugPrint(task)
-        debugPrint(task.timeStart.timeFrom0h())
-        debugPrint(task.timeFinisth.timeFrom0h())
-        debugPrint("---------------------------------------------------------------------------------")
         tasks.append(task)
+    }
+    
+    func addFreeTime(time: Int) {
+        let taskForTable = TaskForTable(time: time, color: .green)
+        self.tasksForTable.append(taskForTable)
+    }
+    
+    func addBusyTime(time: Int, indexOfTask: Int) {
+        let taskForTable = TaskForTable(time: time, color: .red, indexOfTasks: indexOfTask)
+        self.tasksForTable.append(taskForTable)
     }
     
     func convertToTableData() {
         tasksForTable.removeAll()
         for i in 0...tasks.count - 1 {
             if (i == 0) {
+                
                 if (tasks[i].timeStart.timeFrom0h() != 0) {
-                    let taskToTable = TaskForTable(time: tasks[i].timeStart.timeFrom0h(), color: .green)
-                    tasksForTable.append(taskToTable)
+                    let timeOfTask = tasks[i].timeStart.timeFrom0h()
+                    self.addFreeTime(time: timeOfTask)
                 }
-                let taskToTable = TaskForTable(time: tasks[i].timeFinisth.timeFrom0h() - tasks[i].timeStart.timeFrom0h(), color: .red, indexOfTasks: i)
-                tasksForTable.append(taskToTable)
+                let timeOfTask = tasks[i].timeFinisth.timeFrom0h() - tasks[i].timeStart.timeFrom0h()
+                self.addBusyTime(time: timeOfTask, indexOfTask: i)
+                
+            } else if (i == tasks.count - 1) {
+                
+                if (tasks[i].timeStart.timeFrom0h() != tasks[i - 1].timeFinisth.timeFrom0h()) {
+                    let timeOfTask = tasks[i].timeStart.timeFrom0h() - tasks[i - 1].timeFinisth.timeFrom0h()
+                    self.addFreeTime(time: timeOfTask)
+                }
+                
+                let timeOfTask = tasks[i].timeFinisth.timeFrom0h() - tasks[i].timeStart.timeFrom0h()
+                self.addBusyTime(time: timeOfTask, indexOfTask: i)
+                
+                if (tasks[i].timeFinisth.timeFrom0h() != 24 * 60) {
+                    let timeOfTask = 24 * 60 - tasks[i].timeFinisth.timeFrom0h()
+                    addFreeTime(time: timeOfTask)
+                }
+                
             } else {
                 if (tasks[i].timeStart.timeFrom0h() != tasks[i - 1].timeFinisth.timeFrom0h()) {
-                    let taskToTable = TaskForTable(time: tasks[i].timeFinisth.timeFrom0h() - tasks[i].timeStart.timeFrom0h(), color: .green)
-                    tasksForTable.append(taskToTable)
+                    let timeOfTask = tasks[i].timeStart.timeFrom0h() - tasks[i - 1].timeFinisth.timeFrom0h()
+                    self.addFreeTime(time: timeOfTask)
                 }
-                let taskToTable = TaskForTable(time: tasks[i].timeFinisth.timeFrom0h() - tasks[i].timeStart.timeFrom0h(), color: .red, indexOfTasks: i)
-                tasksForTable.append(taskToTable)
+                
+                let timeOfTask = tasks[i].timeFinisth.timeFrom0h() - tasks[i].timeStart.timeFrom0h()
+                self.addBusyTime(time: timeOfTask, indexOfTask: i)
             }
         }
     }
@@ -91,9 +118,7 @@ extension ViewController: UICollectionViewDataSource {
         if (tasksForTable[indexPath.row].indexOfTasks == -1) {
             cell.renderFreeTime()
         } else {
-            cell.renderTask(timeStart: tasks[tasksForTable[indexPath.row].indexOfTasks].timeStart.show(), timeFinish: tasks[tasksForTable[indexPath.row].indexOfTasks].timeFinisth.show())
-            debugPrint(tasks[tasksForTable[indexPath.row].indexOfTasks].timeStart.show())
-            debugPrint(tasks[tasksForTable[indexPath.row].indexOfTasks].timeFinisth.show())
+            cell.renderTask(name: tasks[tasksForTable[indexPath.row].indexOfTasks].name, timeStart: tasks[tasksForTable[indexPath.row].indexOfTasks].timeStart.show(), timeFinish: tasks[tasksForTable[indexPath.row].indexOfTasks].timeFinisth.show())
         }
         return cell
     }
