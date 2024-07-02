@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		525A526A2C329726001CAE02 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A52692C329726001CAE02 /* Task.swift */; };
 		52B6EC792C315FDA009A0C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6EC782C315FDA009A0C21 /* AppDelegate.swift */; };
 		52B6EC7B2C315FDA009A0C21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6EC7A2C315FDA009A0C21 /* SceneDelegate.swift */; };
 		52B6EC7D2C315FDA009A0C21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6EC7C2C315FDA009A0C21 /* ViewController.swift */; };
 		52B6EC802C315FDA009A0C21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B6EC7E2C315FDA009A0C21 /* Main.storyboard */; };
 		52B6EC822C315FDC009A0C21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B6EC812C315FDC009A0C21 /* Assets.xcassets */; };
 		52B6EC852C315FDC009A0C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B6EC832C315FDC009A0C21 /* LaunchScreen.storyboard */; };
+		52B8697D2C32A72B00163D64 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8697C2C32A72B00163D64 /* Time.swift */; };
+		52B869802C32AF0100163D64 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8697E2C32AF0100163D64 /* CollectionViewCell.swift */; };
+		52B869812C32AF0100163D64 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B8697F2C32AF0100163D64 /* CollectionViewCell.xib */; };
+		52B869832C32B45800163D64 /* TaskForTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B869822C32B45800163D64 /* TaskForTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		525A52692C329726001CAE02 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		52B6EC752C315FDA009A0C21 /* schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6EC782C315FDA009A0C21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B6EC7A2C315FDA009A0C21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		52B6EC812C315FDC009A0C21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B6EC842C315FDC009A0C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52B6EC862C315FDC009A0C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B8697C2C32A72B00163D64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		52B8697E2C32AF0100163D64 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		52B8697F2C32AF0100163D64 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		52B869822C32B45800163D64 /* TaskForTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskForTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,11 @@
 				52B6EC782C315FDA009A0C21 /* AppDelegate.swift */,
 				52B6EC7A2C315FDA009A0C21 /* SceneDelegate.swift */,
 				52B6EC7C2C315FDA009A0C21 /* ViewController.swift */,
+				52B869822C32B45800163D64 /* TaskForTable.swift */,
+				525A52692C329726001CAE02 /* Task.swift */,
+				52B8697C2C32A72B00163D64 /* Time.swift */,
+				52B8697E2C32AF0100163D64 /* CollectionViewCell.swift */,
+				52B8697F2C32AF0100163D64 /* CollectionViewCell.xib */,
 				52B6EC7E2C315FDA009A0C21 /* Main.storyboard */,
 				52B6EC812C315FDC009A0C21 /* Assets.xcassets */,
 				52B6EC832C315FDC009A0C21 /* LaunchScreen.storyboard */,
@@ -127,6 +142,7 @@
 			files = (
 				52B6EC852C315FDC009A0C21 /* LaunchScreen.storyboard in Resources */,
 				52B6EC822C315FDC009A0C21 /* Assets.xcassets in Resources */,
+				52B869812C32AF0100163D64 /* CollectionViewCell.xib in Resources */,
 				52B6EC802C315FDA009A0C21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B8697D2C32A72B00163D64 /* Time.swift in Sources */,
+				52B869832C32B45800163D64 /* TaskForTable.swift in Sources */,
 				52B6EC7D2C315FDA009A0C21 /* ViewController.swift in Sources */,
+				52B869802C32AF0100163D64 /* CollectionViewCell.swift in Sources */,
+				525A526A2C329726001CAE02 /* Task.swift in Sources */,
 				52B6EC792C315FDA009A0C21 /* AppDelegate.swift in Sources */,
 				52B6EC7B2C315FDA009A0C21 /* SceneDelegate.swift in Sources */,
 			);
@@ -287,6 +307,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9ZTPVX9D38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = schedule/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -299,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yeahhyeah.schedule;
+				PRODUCT_BUNDLE_IDENTIFIER = yeah.yeah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -314,6 +335,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9ZTPVX9D38;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = schedule/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -326,7 +348,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yeahhyeah.schedule;
+				PRODUCT_BUNDLE_IDENTIFIER = yeah.yeah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
